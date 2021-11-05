@@ -1,8 +1,9 @@
 import "./style.css";
 
-function ProductCard({ filteredProducts, addToCart }) {
-  const { id, name, price, img, category } = filteredProducts;
+function ProductCard({ burgers, addToCart }) {
+  const { id, name, price, img, category } = burgers;
   const fixedPrice = price.toFixed(2);
+  console.log(id);
 
   return (
     <>
@@ -14,7 +15,11 @@ function ProductCard({ filteredProducts, addToCart }) {
         <span className="card__info--category">{category}</span>
         <span className="card__info--price">R${fixedPrice}</span>
         <div className="card__button--container">
-          <button className="card__button" onClick={() => addToCart(id)}>
+          <button
+            className="card__button"
+            type="button"
+            onClick={() => addToCart(id)}
+          >
             Adicionar
           </button>
         </div>

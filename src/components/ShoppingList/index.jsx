@@ -9,31 +9,46 @@ export const EmptyList = () => {
   );
 };
 
-export const List = ({ currentSale, cartTotal, removeItem, removeAll }) => {
-  const { id, name, price, img } = currentSale;
+export const List = ({
+  setCartTotal,
+  currentSale,
+  cartTotal,
+  removeItem,
+  removeAll,
+}) => {
+  const totalPrice = currentSale.reduce((previousValue, nextValue) => {
+    return previousValue + nextValue.price;
+  }, 0);
+
+  setCartTotal(totalPrice);
   return (
     <div className="cart__container">
       <ul className="list">
-        {currentSale.map(() => (
-          <li key={id} className="list__items">
-            <img src={img} alt={name} className="list__items__img"></img>
+        {currentSale.map((item, index) => (
+          <li key={index} className="list__items">
+            <img
+              src={item.img}
+              alt={item.name}
+              className="list__items__img"
+            ></img>
             <div className="list__items__text">
-              <h2 className="list__items__text--name">{name}</h2>
-              <h3 className="list__items__text--price">{price}</h3>
+              <h2 className="list__items__text--name">{item.name}</h2>
+              <h3 className="list__items__text--price">{item.price}</h3>
             </div>
-            <div className="cart__total">
-              <span>Total</span>
-              <span>{`R$${cartTotal}`}</span>
-            </div>
+
             <button
               className="list__items__remove"
-              onClick={() => removeItem(id)}
+              onClick={() => removeItem(item.id)}
             >
               Remover
             </button>
           </li>
         ))}
       </ul>
+      <div className="cart__total">
+        <span>Total</span>
+        <span>{`R$${cartTotal}`}</span>
+      </div>
       <button className="removeAllButton" onClick={removeAll}>
         Remover tudo
       </button>

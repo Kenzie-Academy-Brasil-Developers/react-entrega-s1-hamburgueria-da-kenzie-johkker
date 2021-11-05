@@ -58,30 +58,24 @@ function App() {
     setFilteredProducts(
       products.filter(
         (product) =>
-          product.category === userInput || product.name === userInput
+          product.category.toLowerCase() === userInput.toLowerCase() ||
+          product.name.toLowerCase() === userInput.toLowerCase()
       )
     );
   };
 
   const addToCart = (id) => {
     const selectedProduct = products.find((element) => element.id === id);
-    console.log(selectedProduct);
-    console.log(currentSale);
-    currentSale.includes(id)
-      ? setCurrentSale([...currentSale])
-      : setCurrentSale([...currentSale, selectedProduct]);
-    currentSale.length === 0 ? setCurrentSale([...currentSale]) : updateCart();
+    if (!currentSale.includes(selectedProduct)) {
+      setCurrentSale([...currentSale, selectedProduct]);
+    }
   };
 
-  const updateCart = () => {
-    setCartTotal(currentSale.reduce((a, b) => a.price + b.price));
-  };
   const removeItem = (id) => {
     setCurrentSale(currentSale.filter((element) => element.id !== id));
   };
   const removeAll = () => {
     setCurrentSale([]);
-    updateCart();
   };
 
   return (
@@ -116,6 +110,13 @@ function App() {
       </div>
       <div className="App__cart">
         <div>Carrinho de Compras</div>
+        <ShoppingCart
+          currentSale={currentSale}
+          cartTotal={cartTotal}
+          removeItem={removeItem}
+          removeAll={removeAll}
+          setCartTotal={setCartTotal}
+        />
       </div>
     </>
   );
