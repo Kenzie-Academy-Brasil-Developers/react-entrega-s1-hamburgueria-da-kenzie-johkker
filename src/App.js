@@ -35,14 +35,14 @@ function App() {
     },
     {
       id: 5,
-      name: "Coca",
+      name: "Coca-Cola",
       category: "Bebidas",
       price: 4.99,
       img: "https://i.ibb.co/fxCGP7k/coca-cola.png",
     },
     {
       id: 6,
-      name: "Fanta",
+      name: "Mc-Shake",
       category: "Bebidas",
       price: 4.99,
       img: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
@@ -109,8 +109,9 @@ function App() {
         />
       </div>
       <div className="App__cart">
-        <div>Carrinho de Compras</div>
+        <div className="cart__title">Carrinho de Compras</div>
         <ShoppingCart
+          className="cart__display"
           currentSale={currentSale}
           cartTotal={cartTotal}
           removeItem={removeItem}
