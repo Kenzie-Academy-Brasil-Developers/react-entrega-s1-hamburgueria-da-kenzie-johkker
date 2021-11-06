@@ -58,3 +58,20 @@
 .card__button:hover {
   cursor: pointer;
 }
+
+@media screen and (min-width: 800px) {
+  .card__image__container {
+    width: 100%;
+  }
+  .card__info--name {
+    font-size: 2rem;
+  }
+  .card__info--category {
+    font-size: 1.2rem;
+    position: relative;
+    top: -10%;
+  }
+  .card__info--price {
+    font-size: 1.3rem;
+  }
+}

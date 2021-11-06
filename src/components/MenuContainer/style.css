@@ -30,3 +30,16 @@
   border-radius: 10px;
   border: 2px solid #e0e0e0;
 }
+
+@media screen and (min-width: 800px) {
+  .App__list {
+    flex-wrap: wrap;
+    margin-top: 5vh;
+  }
+  .App__list__cards {
+    width: 30%;
+    height: 30%;
+    margin-right: 0;
+    margin-bottom: 3vh;
+  }
+}

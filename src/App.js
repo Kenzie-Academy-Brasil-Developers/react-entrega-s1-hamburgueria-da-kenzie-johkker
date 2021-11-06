@@ -4,7 +4,7 @@ import ListaProdutos from "./components/MenuContainer";
 import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
-  const [products, setProducts] = useState([
+  const [products] = useState([
     {
       id: 1,
       name: "Hamburguer",

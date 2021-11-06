@@ -20,7 +20,7 @@ export const List = ({
     return previousValue + nextValue.price;
   }, 0);
 
-  setCartTotal(totalPrice);
+  setCartTotal(totalPrice.toFixed(2));
   return (
     <div className="cart__container">
       <ul className="list">

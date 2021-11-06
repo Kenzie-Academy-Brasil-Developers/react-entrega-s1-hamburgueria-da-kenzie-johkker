@@ -123,8 +123,10 @@
 .removeAllButton:hover {
   cursor: pointer;
   background-color: #eb5757;
+  color: #f5f5f5;
 }
 
 .removeAllButton:active {
   background-color: #e60000;
+  color: #f5f5f5;
 }
