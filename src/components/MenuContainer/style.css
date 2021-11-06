@@ -34,11 +34,16 @@
 @media screen and (min-width: 800px) {
   .App__list {
     flex-wrap: wrap;
-    margin-top: 5vh;
+    margin-top: 4vh;
+    padding-inline-start: 0;
+    padding-top: 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: hidden;
   }
   .App__list__cards {
     width: 30%;
-    height: 30%;
+    height: 30.6vw;
     margin-right: 0;
     margin-bottom: 3vh;
   }

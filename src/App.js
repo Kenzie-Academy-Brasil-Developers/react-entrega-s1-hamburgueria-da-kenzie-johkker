@@ -59,7 +59,8 @@ function App() {
       products.filter(
         (product) =>
           product.category.toLowerCase() === userInput.toLowerCase() ||
-          product.name.toLowerCase() === userInput.toLowerCase()
+          product.name.toLowerCase() === userInput.toLowerCase() ||
+          userInput === ""
       )
     );
   };

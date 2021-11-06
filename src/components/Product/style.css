@@ -64,7 +64,7 @@
     width: 100%;
   }
   .card__info--name {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   .card__info--category {
     font-size: 1.2rem;
@@ -72,6 +72,10 @@
     top: -10%;
   }
   .card__info--price {
+    font-size: 1.3rem;
+  }
+
+  .card__button {
     font-size: 1.3rem;
   }
 }
